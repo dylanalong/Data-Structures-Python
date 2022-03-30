@@ -1,13 +1,12 @@
 from math import floor
-from pickle import NONE
 
 class min_heap:
     def __init__(self, init_size) -> None:
-        self.arr = [NONE] * init_size
+        self.arr = [None] * init_size
         self.size = 0
 
     def resize(self):
-        temp = [NONE]*len(self.arr)
+        temp = [None]*len(self.arr)
         self.arr = self.arr + temp 
     
     def left_child(self, index) -> int:
@@ -40,7 +39,7 @@ class min_heap:
         return min
     
     def heapify(self, index):
-        min = NONE
+        min = None
         left = self.left_child(index)
         right = self.right_child(index)
         if left <= self.size and right <= self.size:
@@ -51,7 +50,7 @@ class min_heap:
         elif left <= self.size:
             if self.arr[left] < self.arr[index]:
                 min = left
-        if min != NONE:
+        if min != None:
             self.swap(index, min)
             self.heapify(min)
             
