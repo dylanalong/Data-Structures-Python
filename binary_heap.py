@@ -37,6 +37,14 @@ class min_heap:
         self.size -= 1
         self.heapify(1)
         return min
+
+    def sort(self):
+        result = []
+        count = self.size
+        for _ in range(count):
+            result.append(self.delete())
+            
+        return result
     
     def heapify(self, index):
         min = None
@@ -64,6 +72,7 @@ if __name__ == '__main__':
     heap.insert(5)
     heap.insert(8)
     heap.insert(3)
-    min = heap.delete()
-    min = heap.delete()
-    print("hello")
+
+    sorted = heap.sort()
+
+    print(sorted)
